@@ -1,0 +1,116 @@
+h1{
+    text-align: center;
+    margin: 20px 0;
+}
+.account{
+    margin: 0 20px;
+    display: flex;
+}
+.statsEnchere{
+    width: 50%;
+    display: flex;
+}
+.myauction{
+    background-color: whitesmoke;
+    margin-right: 5px;
+    border-radius: 0 0 4px 4px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.inAuction{
+    border-radius: 0 0 4px 4px;
+    background-color: whitesmoke;
+    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.title{
+    border-left: 8px solid rgb(21, 153, 201);
+    border-radius: 4px;
+    background-color: #333;
+    color: rgb(255, 255, 255);
+}
+.content-stats{
+    padding: 15px;
+}
+.content-stats a{
+    color: black;
+}
+.content-stats span:nth-child(1){
+    color: rgb(21, 153, 201);
+    font-weight: bold;
+}.content-stats span:nth-child(3){
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+.manageaccount{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    width: 50%;
+}
+.content-manage{
+    height: 100%;
+    padding: 15px;
+    background-color: whitesmoke;
+}
+h3{
+    text-align: center;
+    margin: 10px 0;
+}
+
+.content-manage form input{
+    width: 100%;
+    padding: 10px;
+}
+.content-manage form button{
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(21, 153, 201);
+    color: white;
+    padding: 11px;
+}
+.content-manage form.changepwd{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.content-manage form.changepwd div{
+    display: flex;
+}
+.content-manage form.changepwd div input:nth-child(2){
+    margin: 0 10px;
+}
+.content-manage form small{
+    color: crimson;
+}
+.content-manage form button{
+    cursor: pointer;
+    margin-top: 8px;
+}
+h4{
+    margin-bottom: 3px;
+}
+@media screen and (max-width: 1200px) {
+    .account{
+        flex-direction: column;
+    }
+    .statsEnchere, .manageaccount{
+        width: 100%;
+    }
+    .statsEnchere{
+        flex-direction: column;
+    }
+    .myauction, .inAuction{
+        margin: 0 0 10px 0;
+        width: 100%;
+    }
+    .manageaccount{
+        margin: 0;
+    }
+}
+@media screen and (max-width: 650px) {
+
+}

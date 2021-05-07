@@ -1,0 +1,97 @@
+
+h1{
+    margin: 0 0 20px 0;
+    text-align: center;
+}
+.title-acceuil{
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+  .row{
+      width: 90%;
+      margin: 0 auto;
+  }
+  .column {
+    float: left;
+    width: 25%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+  }
+  
+  .card a:nth-child(1):hover{
+    opacity: 0.9;
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .row{
+        width: initial;
+        margin: 0;
+    }
+    .column {
+      width: 50%;
+      display: block;
+    }
+  }
+  @media screen and (max-width: 650px) {
+    .row{
+        width: initial;
+        margin: 0;
+    }
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }
+  
+  .card {
+      
+    background-color: whitesmoke;
+    flex-direction: column;
+    box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  .card img:hover{
+      transition: .3s;
+      opacity: 0.9;
+  }
+  
+  .container {
+      height: 50%;
+  }
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+
+  .startBid {
+      font-weight: bold;
+    color: rgb(28, 101, 179);
+  }
+  .desc{
+      padding: 10px 10px 0 10px;
+  }
+  .button {
+      border: none;
+      border-top-left-radius: 4px;
+    border-right: 8px solid rgb(21, 153, 201);
+    outline: 0;
+    float: right;
+    margin-top: 10px;
+
+    /* display: inline-block; */
+    padding: 8px 20px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    
+  }
+  
+  .button:hover {
+    background-color: rgb(21, 153, 201);
+    transition: .3s;
+    border-right: 8px solid rgb(0, 0, 0);
+  }

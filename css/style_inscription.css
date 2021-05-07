@@ -1,0 +1,85 @@
+/*@media (max-width: 828px){*/
+
+
+.container{
+    margin-top: 50vh; /* poussé de la moitié de hauteur de viewport */
+    transform: translateY(-50%); /* tiré de la moitié de sa propre hauteur */
+}
+
+.insc{
+    margin-bottom: 60px;
+    text-align: center;
+    text-transform: uppercase;
+    
+}.insc label{
+    background-color: rgb(49,49,49);
+    color: white;
+    font-weight: bold;
+    border-radius: 40px;
+    padding: 20px 40px;
+}
+/* .area{
+    width: 60%;
+    padding: 20px;
+    font-weight: bold;
+    border-top: none;border-left: none;border-right: none;
+    border-bottom: 2px solid rgb(0, 104, 122);
+    color: rgb(49,49,49);
+    display: block;
+    background-color:whitesmoke;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+} */
+.area{
+    /*position: relative;
+    top: 40px;*/
+    width: 60%;
+    padding: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    color: rgb(36, 36, 36);
+    display: inline-block;
+    background-color:rgb(207, 207, 207);
+    
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block; 
+}.area:focus{
+    outline: none;
+}
+.check{
+    position: relative; /* postulat de départ */
+    display: block;
+    left: 20%; /* à 50%/50% du parent référent */
+}
+.check a{
+    color:rgb(16, 127, 146);
+}
+button{
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    background-color:rgb(38, 170, 194);
+    color: white;
+    border-radius: 40px;
+    font-weight: bold;
+    padding: 20px 50px;
+}
+button:active{   background-color: rgb(49,49,49); color:white;   }
+
+.connexion{
+    margin-top: 20px;
+    text-align: center;
+}
+.connexion a{ color:rgb(16, 127, 146); }
+.connexion a:hover{ color:rgb(14, 102, 117);}
+
+/*}*/

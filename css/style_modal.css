@@ -1,0 +1,28 @@
+.modal-window>div{
+    width: 500px;
+    height: 200px;
+}
+.modal-window form input{
+    width: 100%;
+    padding: 10px;
+}
+.modal-window form button{
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-top: 10px;
+    float: right;
+    color: white;
+    background-color: rgb(21, 153, 201);
+    padding: 10px 20px;
+}
+.modal-window form button:hover{
+    background-color: rgb(8, 131, 175);
+}
+
+@media screen and (max-width: 850px) {
+    .modal-window>div{
+        width: 300px;
+        height: 220px;
+    }
+}

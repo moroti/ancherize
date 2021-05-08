@@ -1,5 +1,8 @@
 {
   "name": "Ancherize",
   "description": "Basic auction system WebApp",
+  "require": {
+    "vlucas/phpdotenv": "2.3.0"
+  },
   "license": "MIT"
 }

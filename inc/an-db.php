@@ -5,7 +5,8 @@ Ce fichier comporte les scripts de connexion de la base ainsi les differentes op
 
 */
 class Ancherize_DB extends PDO {
-	private $db_url = 'mysql:host=127.0.0.1;dbname=ancherize-db';
+	private $db_url = 'mysql://bb695d8e086d43:ce01d43c@us-cdbr-east-03.cleardb.com/heroku_98df4683db76c11?reconnect=true';
+	// private $db_url = 'mysql:host=127.0.0.1;dbname=ancherize-db';
 	private $db_user = 'root';
 	private $db_mdp = '';
 	private $passAncherize = 'ancherize$khaled@paul';

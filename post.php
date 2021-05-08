@@ -1,7 +1,6 @@
 <?php require "inc/includes.php"; ?>
 <?php require "inc/functions.php"; ?>
 <?php logged_only(); ?>
-
 <?php
 
 $correctExt = array('jpg' , 'jpeg' , 'gif' , 'png', 'JPG', 'JPEG', 'GIF', 'PNG');

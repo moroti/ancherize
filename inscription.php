@@ -1,6 +1,5 @@
 <?php require 'inc/includes.php'; ?>
 <?php require_once 'inc/functions.php';  ?>
-
 <?php if_logged();  ?>
 <?php 
         if(!empty($_POST)){

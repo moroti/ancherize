@@ -2,76 +2,70 @@
 <?php require "inc/functions.php"; ?>
 <?php logged_only();  ?>
 <?php require 'inc/header.php';  ?>
-
 <style>
     @import 'css/style_account.css';
 </style>
-
 <?php 
-    if(!empty($_POST['old_pwd']) && !empty($_POST['new_pwd']) && !empty($_POST['conf_pwd'])){
-        $new_pwd = test_input($_POST['new_pwd']);
-        if(strlen($new_pwd) <= 3){
-            $_SESSION['flash']['error'] = "Veuillez choisir un mot de passe de minimum (4) caractères";
+if(!empty($_POST['old_pwd']) && !empty($_POST['new_pwd']) && !empty($_POST['conf_pwd'])){
+    $new_pwd = test_input($_POST['new_pwd']);
+    if(strlen($new_pwd) <= 3){
+        $_SESSION['flash']['error'] = "Veuillez choisir un mot de passe de minimum (4) caractères";
+    }else{
+        if($new_pwd != $_POST['conf_pwd']){
+            $_SESSION['flash']['error'] = "Les mots de passe ne correspondent pas";
+            header("Refresh:0");
         }else{
-            if($new_pwd != $_POST['conf_pwd']){
-                $_SESSION['flash']['error'] = "Les mots de passe ne correspondent pas";
-                header("Refresh:0");
-            }else{
-                if(password_verify($_POST['old_pwd'], $_SESSION['auth']->pwd())){
-                    if(password_verify($new_pwd, $_SESSION['auth']->pwd())){
-                        $_SESSION['flash']['error'] = "Essayer un mot de passe différent de l'ancien";
-                        header("Refresh:0");
-                    } else {
+            if(password_verify($_POST['old_pwd'], $_SESSION['auth']->pwd())){
+                if(password_verify($new_pwd, $_SESSION['auth']->pwd())){
+                    $_SESSION['flash']['error'] = "Essayer un mot de passe différent de l'ancien";
+                    header("Refresh:0");
+                } else {
 
-                        $new_pwd = password_hash($new_pwd, PASSWORD_BCRYPT);
-                        $anch->updatePwd($_SESSION['auth'], $new_pwd);
-                        $_SESSION['auth']->set_pwd($new_pwd);
-                        $_SESSION['flash']['success'] = "Mot de passe modifier avec succès";
-                        header("Refresh:0");
-
-                    }
-                }else{
-                    $_SESSION['flash']['error'] = "Mot de passe incorrect";
+                    $new_pwd = password_hash($new_pwd, PASSWORD_BCRYPT);
+                    $anch->updatePwd($_SESSION['auth'], $new_pwd);
+                    $_SESSION['auth']->set_pwd($new_pwd);
+                    $_SESSION['flash']['success'] = "Mot de passe modifier avec succès";
                     header("Refresh:0");
                 }
+            }else{
+                $_SESSION['flash']['error'] = "Mot de passe incorrect";
+                header("Refresh:0");
             }
         }
     }
+}
 
 
-    if(!empty($_POST['pwd_del'])){
-        $pwd_del = test_input($_POST['pwd_del']);
-        if(password_verify($pwd_del, $_SESSION['auth']->pwd())) {
-                if($anch->deleteUser($_SESSION['auth']->pseudo())) {
-                    header('Location:deconnexion.php');
-                    $_SESSION['flash']['success'] = "Compte supprimé avec succès ! Ne reviens plus jamais !";
-                } else {
-                    header('Refresh:0');
-                    $_SESSION['flash']['error'] = "Vous ne lisez pas ? Vous êtes impliqué dans une enchère.<br/> Impossible de vous désinscrire maintenant!";
-                }
-            
-        }else{
-            $_SESSION['flash']['error'] = "Mot de passe incorrect ! Sale pirate";
-        }
+if(!empty($_POST['pwd_del'])){
+    $pwd_del = test_input($_POST['pwd_del']);
+    if(password_verify($pwd_del, $_SESSION['auth']->pwd())) {
+            if($anch->deleteUser($_SESSION['auth']->pseudo())) {
+                header('Location:deconnexion.php');
+                $_SESSION['flash']['success'] = "Compte supprimé avec succès ! Ne reviens plus jamais !";
+            } else {
+                header('Refresh:0');
+                $_SESSION['flash']['error'] = "Vous ne lisez pas ? Vous êtes impliqué dans une enchère.<br/> Impossible de vous désinscrire maintenant!";
+            }
+        
+    }else{
+        $_SESSION['flash']['error'] = "Mot de passe incorrect ! Sale pirate";
     }
-    if(!empty($_POST['sale'])){
-        if($_POST['sale']>0){
-            $_SESSION['auth']->set_sale($_POST['sale']);
-            $anch->updateSaleUser($_POST['sale'], $_SESSION['auth']);
-            $_SESSION['flash']['success'] = "Rechargement effectué";
-            header('Refresh:0');
-            
-        }else{
-            $_SESSION['flash']['error'] = "Montant invalide";
-            header('Refresh:0');
-        }
+}
+if(!empty($_POST['sale'])){
+    if($_POST['sale']>0){
+        $_SESSION['auth']->set_sale($_POST['sale']);
+        $anch->updateSaleUser($_POST['sale'], $_SESSION['auth']);
+        $_SESSION['flash']['success'] = "Rechargement effectué";
+        header('Refresh:0');
+        
+    }else{
+        $_SESSION['flash']['error'] = "Montant invalide";
+        header('Refresh:0');
     }
+}
 ?>
-
-
 <?php $user_articles = $anch->loadArticles($_SESSION['auth']->pseudo()); ?>
 <?php $user_anch_articles = $anch->loadAnchArticles($_SESSION['auth']->pseudo()); ?>
-
 <div class="wrapper">
         <h1>Hello <span style="color:rgb(21, 153, 201);"><?php echo $_SESSION['auth']->pseudo(); ?></span></h1>
         <div class="account">

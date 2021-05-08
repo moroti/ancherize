@@ -1,22 +1,22 @@
 <?php require "inc/includes.php"; ?>
-    <?php require "inc/functions.php";?>
-    <?php logged_only();  ?>
-    <?php require 'inc/header.php';  ?>
-    <style>
-        @import "css/style_connexion.css";
-        .connect {
-            margin-bottom: 40px;
-        }
-        .go {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-        .go input {
-            width: 20px;
-            margin: 0px 5px;
-        }
-    </style>
+<?php require "inc/functions.php";?>
+<?php logged_only();  ?>
+<?php require 'inc/header.php';  ?>
+<style>
+    @import "css/style_connexion.css";
+    .connect {
+        margin-bottom: 40px;
+    }
+    .go {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .go input {
+        width: 20px;
+        margin: 0px 5px;
+    }
+</style>
 
 <div class="container">
         <div class="connect"><label>Publier une enchère</label> </div>

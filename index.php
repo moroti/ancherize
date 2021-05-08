@@ -1,3 +1,4 @@
+<?php require __DIR__ . '/vendor/autoload.php'; ?>
 <?php require "inc/includes.php"; ?>
 <?php require 'inc/header.php';  ?>
 <style>

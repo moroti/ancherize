@@ -1,11 +1,9 @@
 <?php
-
 /*
 
 Ce fichier comporte les scripts de connexion de la base ainsi les differentes operations.
 
 */
-
 class Ancherize_DB extends PDO {
 	private $db_url = 'mysql:host=127.0.0.1;dbname=ancherize-db';
 	private $db_user = 'root';

@@ -5,12 +5,15 @@ Ce fichier comporte les scripts de connexion de la base ainsi les differentes op
 
 */
 class Ancherize_DB extends PDO {
-	private $db_url = 'mysql:host=127.0.0.1;dbname=ancherize-db';
-	private $db_user = 'root';
+	private $db_url = '';
+	private $db_user = '';
 	private $db_mdp = '';
 	private $passAncherize = 'ancherize$khaled@paul';
 
-	public function __construct($spw) {
+	public function __construct($spw, $dsn, $user, $mdp) {
+		$this->db_url = $dsn;
+		$this->db_user = $user;
+		$this->db_mdp = $mdp;
 		if($spw==$this->passAncherize) {
 			parent::__construct($this->db_url, $this->db_user, $this->db_mdp);
 		}
